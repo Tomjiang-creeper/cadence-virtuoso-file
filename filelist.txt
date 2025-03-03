@@ -1,0 +1,18 @@
+
+*Introduction of Files
+
+ 	assura_tech.lib - file containing the Assura RCX initialization path
+ 	Assura/		- Direcotry that contains Assura verification files
+ 	Calibre/	- Directory that contains Calibre verification files
+	PDK_doc		- Directory containing the PDK documentations (including spice document)
+ 	REVISION	- The revision history
+ 	cds.lib 	- file containing the Cadence initialization file 
+ 	display.drf 	- display resources file
+ 	icc.rules 	- icc auto P&R tech file	
+ 	models/ 	- directory containing spice/spectre models
+ 	skill/ 		- directory containing callbacks and utilities skill codes
+ 	techfile	- PDK ASCII technolog file
+ 	tsmc18rf/	- The PDK library
+
+  Note: Please refer to the "README" file first in each directory for detail 
+        information.

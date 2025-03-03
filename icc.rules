@@ -1,0 +1,203 @@
+; Translation Rules 2.0
+; Title: icc.rules_edit
+; Technology File: tsmc18rf (1P6M)
+; Creator: Rules Editor 5.0.33_USR3.16.35
+; Creation Date: Feb  2 13:27:16 2005
+; From: @(#)6CDS: icfb.exe version 5.0.0 08/17/2004 10:26 (cds12107) 6
+; User: sallyw
+
+iccRevision = "2.0"
+iccTechnologyFile = "tsmc18rf"
+
+iccLayers =
+    list(
+	list( '("METAL6" "drawing") "metal" "orthogonal" 1.5 1.5 nil t)
+	list( '("VIA56" "drawing") "cut" "off" 0.36 0.35 nil t)
+	list( '("METAL5" "drawing") "metal" "orthogonal" 0.28 0.28 nil t)
+	list( '("VIA45" "drawing") "cut" "off" 0.26 0.26 nil t)
+	list( '("METAL4" "drawing") "metal" "orthogonal" 0.28 0.28 nil t)
+	list( '("VIA34" "drawing") "cut" "off" 0.26 0.26 nil t)
+	list( '("METAL3" "drawing") "metal" "orthogonal" 0.28 0.28 nil t)
+	list( '("VIA23" "drawing") "cut" "off" 0.26 0.26 nil t)
+	list( '("METAL2" "drawing") "metal" "orthogonal" 0.28 0.28 nil t)
+	list( '("VIA12" "drawing") "cut" "off" 0.26 0.26 nil t)
+	list( '("METAL1" "drawing") "metal" "orthogonal" 0.23 0.23 nil t)
+	list( '("CONT" "drawing") "cut" "off" 0.22 0.25 nil t)
+	list( '("POLY1" "drawing") "polysilicon" "vertical" 0.18 0.25 nil t)
+	list( '("DIFF" "drawing") "n_diffusion" "off" 0.22 0.28 nil t)
+	list( '("NWELL" "drawing") "n_well" "off" 2.1 1.4 nil t)
+	list( '("WELLBODY" "drawing") "none" "off" 0.0 0.0 nil t)
+	list( '("RMDUMMY" "drawing") "none" "off" 0.0 0.0 t t)
+    )
+
+iccVias =
+    list(
+	list( '("tsmc18rf" "M1_POLY1" "symbolic") t)
+	list( '("tsmc18rf" "M2_M1" "symbolic") t)
+	list( '("tsmc18rf" "M3_M2" "symbolic") t)
+	list( '("tsmc18rf" "M4_M3" "symbolic") t)
+	list( '("tsmc18rf" "M5_M4" "symbolic") t)
+	list( '("tsmc18rf" "M6_M5" "symbolic") t)
+    )
+
+iccEquivalentLayers =
+    list(
+	list(
+	    '("METAL6" "drawing")
+	    '("METAL6" "pin")
+	)
+	list(
+	    '("METAL5" "drawing")
+	    '("METAL5" "pin")
+	)
+	list(
+	    '("METAL4" "drawing")
+	    '("METAL4" "pin")
+	)
+	list(
+	    '("METAL3" "drawing")
+	    '("METAL3" "pin")
+	)
+	list(
+	    '("METAL2" "drawing")
+	    '("METAL2" "pin")
+	)
+	list(
+	    '("METAL1" "drawing")
+	    '("METAL1" "pin")
+	)
+	list(
+	    '("POLY1" "drawing")
+	    '("POLY1" "pin")
+	)
+    )
+
+iccBoundaryLayers =
+    list(
+	list( '("METAL6" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("VIA56" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("METAL5" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("VIA45" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("METAL4" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("VIA34" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("METAL3" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("VIA23" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("METAL2" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("VIA12" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("METAL1" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("CONT" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("POLY1" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("DIFF" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("NWELL" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("WELLBODY" "drawing") '("prBoundary" "drawing") 0.0)
+	list( '("RMDUMMY" "drawing") '("prBoundary" "drawing") 0.0)
+    )
+
+iccKeepouts = list(
+    list( nil list(
+	list(
+	    "c-not" list('("METAL1" "drawing") '("RMDUMMY" "drawing"))
+	    '("METAL1" "drawing") "routing" t
+	)
+	list(
+	    "c-not" list('("METAL2" "drawing") '("RMDUMMY" "drawing"))
+	    '("METAL2" "drawing") "routing" t
+	)
+	list(
+	    "c-not" list('("METAL3" "drawing") '("RMDUMMY" "drawing"))
+	    '("METAL3" "drawing") "routing" t
+	)
+	list(
+	    "c-not" list('("METAL4" "drawing") '("RMDUMMY" "drawing"))
+	    '("METAL4" "drawing") "routing" t
+	)
+	list(
+	    "c-not" list('("METAL5" "drawing") '("RMDUMMY" "drawing"))
+	    '("METAL5" "drawing") "routing" t
+	)
+	list(
+	    "c-not" list('("METAL6" "drawing") '("RMDUMMY" "drawing"))
+	    '("METAL6" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("RMDUMMY" "drawing") 0.0)
+	    '("METAL1" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("RMDUMMY" "drawing") 0.0)
+	    '("METAL2" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("RMDUMMY" "drawing") 0.0)
+	    '("METAL3" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("RMDUMMY" "drawing") 0.0)
+	    '("METAL4" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("RMDUMMY" "drawing") 0.0)
+	    '("METAL5" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("RMDUMMY" "drawing") 0.0)
+	    '("METAL6" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("INDDUMMY" "drawing") 0.0)
+	    '("POLY1" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("INDDUMMY" "drawing") 0.0)
+	    '("METAL1" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("INDDUMMY" "drawing") 0.0)
+	    '("METAL2" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("INDDUMMY" "drawing") 0.0)
+	    '("METAL3" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("INDDUMMY" "drawing") 0.0)
+	    '("METAL4" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("INDDUMMY" "drawing") 0.0)
+	    '("METAL5" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("INDDUMMY" "drawing") 0.0)
+	    '("METAL6" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("CTMDUMMY" "drawing") 0.0)
+	    '("POLY1" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("CTMDUMMY" "drawing") 0.0)
+	    '("METAL1" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("CTMDUMMY" "drawing") 0.0)
+	    '("METAL2" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("CTMDUMMY" "drawing") 0.0)
+	    '("METAL3" "drawing") "routing" t
+	)
+	list(
+	    "size" list('("CTMDUMMY" "drawing") 0.0)
+	    '("METAL4" "drawing") "routing" t
+	)
+	list(
+	    "or" list('("DIFF" "drawing") '("OD2" "drawing"))
+	    '("POLY1" "drawing") "routing" t
+	)
+    )   32)
+)
+
+iccConductors = list(
+)
+

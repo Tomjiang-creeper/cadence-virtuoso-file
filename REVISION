@@ -1,0 +1,325 @@
+
+Revision	Date		Comments
+--------	----		--------
+
+1.0.01		08/06/02	* Initial FE PDK Release for QA
+					Design Rule:T-018-LO-DR-001, Rev 2.3
+						   :T-018-MM-DR-001, Rev 1.2
+					Spice Model:T-018-MM-SP-001, Rev 1.3
+						   :T-018-MM-SP-002, Rev 1.5
+					Techfile: Virtuoso4.4_0.18um_Ver2.3b.tf
+1.1		08/14/02	* Re-packed the QA-ed version 1.0.01 to 1.1
+				  deliveralbe FE Release
+
+1.1.01		08/22/02	* Updated to version 2.3d tech file
+				* BE internal release
+
+1.1.02		08/23/02	* Fixed rf res pcells to avoid 0.002 multiple path width
+				* Updated guides
+				* Added Diva files from Lorraine
+				* Packed PDK for internal release
+1.1.03		08/26/02	* Updated Diva files from Lorraine
+				* Updated guides accordingly
+				* Updated stream files to match 2.3d tech file
+				* Re-packed for internal QA
+
+1.2.01		08/28/02	* Updated guides
+				* Updated Diva files, Version 1.4, from Lorraine
+				* Re-packed for internal QA
+
+1.3		08/30/02	* Replaced Diva files, version 1.5, to address issues
+				 during QA and confirmed fixed.
+				* Updated guides
+				* Final deliverable
+
+1.3.01		09/09/02	* Added ind's and mimcap5's pcells
+				* Updated techfile's stream info
+				* Replaced diva files with version 1.7
+				* Updated guides, device lists, spec'
+
+1.3.02		09/25/02	* Updated ind's pcell
+				* Mapped dracR to r in all resistors' auLvs
+				* Added LVS Resistance (Rho*l/w) to res.'s CDF
+				* Removed display of Cap in resistors
+
+1.3.03		02/08/03	* Added extra 3T and 4T devices	
+				* UPdated techfile to 2.3e
+				* UPdated to template RF models, 1.2 (10/25/02)
+				* Addressed all feedbacks from customers
+				* Preliminary FE release to Zarlink
+				  with TSMC's RF model template (10/25/02)
+
+1.3.04		02/18/03	* Sent Zarlink the preliminary FE/BE/Diva
+				  release
+
+1.3.05		02/28/03	* Changed to Calibre's CDL netlist format
+				* Sent Lorraine and John internal pre-release
+
+1.3.06		03/04/03	* Added nmos over dnw
+				* Added m to resistors
+				* Sent Lorraine and John internal pre-release
+
+1.3.07		03/05/03	* Updated 2T rf resistors (adding dummy stripes)
+				* Updated rphripoly_rf to NP/NP length
+				* Updated m of resistors to not display
+
+1.3.08		03/06/03	* Added diodesd FE
+				* Added pj to mimcaps' CDL
+				* Replaced g with nr in varcaps' CDL
+				* Sent to John and Lorrain internal pre-release
+
+		03/16/03	* Added 3V diodes, 3v vpnp, rnwod
+				* Added switches to all RF resistors
+		03/21/03	* Updated Diva and Assura files
+
+1.3.09		03/26/03	* Packed updated pre-release
+				* Changed (l w _M) to (lr wr _M) in ADS 
+				  MM 3-terminal resistors
+		04/11/03	* Added primitive tables for AMS
+
+1.3.10		04/25/03	* Replaced diva files with version 1.9 updates
+
+1.3.11		04/28/03	* Replaced assura files with version 4.1
+		04/30/03	* Removed diodesd3v's layout
+				* Updated refManual and Device List
+		05/01/03	* Added hidden minGExt switch to mos
+		05/09/03	* Updated varcaps' auCdl to match TSMC's
+				* Updated varcaps in DRAC_ADD file 
+		05/28/03	* Updated mimcaps' CapA, CapP, layouts to match
+				  new pre-release RF models, rev 1.2, dated
+				  May 21, 2003
+		06/05/03	* Updated res.cb, res3.cb to only use one
+				  rho (RhoD2) for dracR
+				* Updated CDL netlist format to not use extra
+				  paramters, like r or c.  They are calculated
+				  directly in DRAC_ADD file
+				* Addressed PCRs 587708/590906 in techfile
+		06/09/03	* Updated varcap's "g" to "nr" in CDL simInfo
+		06/17/03	* Reversed varcap's "nr" back to "g" to match
+				  the latest format from Lorraine's TSMC file
+		06/19/03	* Added M7_M6 to prViaTypes() per PCR# 595485
+		07/11/03	* Stopped PDK update to 1.2 pre-release models
+				  instead to RF 1.1 models and layouts
+				* Updated m factor and Hspice netlist for res
+				* Updated reference manual
+				* Packed for Lorraine
+		07/20/03	* Added w and l for resistors (design variable
+				  supported for l)
+		07/24/03	* Fixed design variable in mimcap and (2*a)
+				  in its callback, ref pcr605180
+		08/06/03	* Revised rnwod.pc and prop.xx to comply with
+				  extended rules in Logic design rules, Rev 2.4
+		08/17/03	* Made metal drawing, net, boundary same colors
+				* Updated *.pc or *.cb to support pPar()
+		08/18/03	* Internal QA Release
+		08/18/03	* Fixed rnwod's Hspice mapping of wr
+				* Set local variables to w or pcw in pcells
+				* Fixed mimcap for new DRC rule - max to CwSp
+				* Adjust Hspice's propMap in defusion resistors
+				* Turned off m in ind, jv
+				* Updated Hspice bjt netlists, area=1
+				* Update vsia cell
+				* Updated refManual
+				* Internal QA Release , 1.1a.1
+				* Added cnr for nr in inductor to support AMS
+		08/26/03	* Updated refManual
+				* Packed for QA verification
+				* Sent to TSMC
+
+1.1a.3		08/28/03	* Added w input in mimcap
+				* Adjust mimcap CapA/CapP to match that in 1.1 models
+				* Removed (SLTEXCL drawing)
+				* Removed prop.xx in M1_NACTIVE
+				* Changed varcap's layout names to add suffixes _c as
+				  TSMC requested.  Changed callback correspondingly
+				* Shrinked DIODUMMY in NW diodes to cover NWELL only
+				* Added Nwell ring and DNW to dnw mos
+		09/04/03	* Added lcesd_rf device
+				* Changed rm6'rho to thick metal's rho
+				* Updated device list
+				* Updated reference manual
+		09/08/03	* Expanded DNW and NW ring in dnw mos
+				  to allow users to drop subties
+				* Packed for QA	
+1.1a.4		09/11/03	* Made mos caps the same as mos devices
+				* Fixed mimcap5' pcell to avoid Assura failure
+				* Expanded DNW/NW more in dnw mos
+				* Added res_polyhri to ResMode.scs.apt
+				* Updated device list and ref manual
+				* Packed for QA
+1.1a.5		09/15/03	* Packed for delivery to TSMC
+1.1a.6		09/16/03	* Fixed mimcap5 stream
+				* Extended OD2 on diodenw3v to NW edges
+				* Added switches to nmos2vdnw and nmos3vdnw
+				  to allow turning on/off DNW and NW rings
+				* Updated reference manual accordingly
+				* Packed for delivery to TSMC
+		09/18/03	* Added Spectre and Hspice models as TSMC requested
+		09/23/03	* Updated reference manual
+				* Release to TSMC
+		10/02/03	* Fixed DRC Cw spacing error in mimcap5
+		10/03/03	* Added lib check to updateCDFs.il file
+				* Added net purpose for NWELL/DNW/PWELL to techfile
+		10/08/03	* Added net purpose for DIFF
+				* Made hilite layers valid 
+		10/09/03	* Add UltraSim support
+				* Update cap.cbe to reset blank width input
+				* Added permute (f) to varcap, jv, mimcap, ind
+				* Updated reference manual
+1.1a.7		10/09/03	* Released for incremental QA
+				* Updated updateCDFs.ile
+				* Updated reference manual for PV files
+		10/14/03	* Released to TSMC
+
+1.1a.8		10/15/03	* Added LOOP-TWO-CAP to drac_cds.lvs file
+				* Renamed Rev# (Manual too) to avoid confusion
+				* Released to TSMC
+1.1a		10/16/03	* Replaced Assura DRC with version 4_9
+				* Updated reference manual accordingly
+				* Renamed version to 1.1c
+				* Released to TSMC
+
+1.2a_pre	01/20/04	* Update all RF devices
+
+1.2a_pre2	02/15/04	*Change the outlook of "nmos2vdnw"/"nmos3vdnw" symbols to let users
+   				 can easily tell them from the "nmos2v"/"nmos3v" devices.
+				*Modify the symbol texts to have a better outlook
+				*Modify 'mimcap5' CDF & callback to allow non-square MiM capacitor(Mixed-signal device).
+				*Remove 'lcesd_rf' device ( Since this device is already removed )
+				*Add "pwdnw" and "dnwpsub" diodes for front-end/post-sim simulation.
+				*Modify "mimcap_rf" device, only "mimcap_shield" is allowed to be used
+   				 in 1P4M/1P5M/1P6M. "mimcap_wos" is only for 1P6M.
+				*Add "RF_DEVICES" and "DO_NOT_USE" Category.
+				*Add corner analysis.
+				*Add assura LVS for CDL flow.
+				*Add Calibre DRC/LVS/RCX decks.
+				*Change some parameters valid range for RF devices
+
+1.2a_pre3	03/03/04	*Add a switch to enable/disable the NW guard-ring on RF resistors.
+				*Add resistance/capacitance value display for RFRES/MIMCAP_RF devices
+				*Add "RWDUMMY-drawing1" and "RPDUMMY-drawing1" layer pairs into
+				 'techfile' and 'strminMap/strmoutMap'
+				*Change resistor LVS dummy layer of 'rnwod' cell from "RWDUMMY-drawing" to "RWDUMMY-drawing1"
+				*Change resistor LVS dummy layer of 'rnlplus','rnplus','rplplus' and 'rpplus' cells from
+				 "RPDUMMY-drawing" to "RPDUMMY-drawing"(let LVS can recognize 3T resistors)
+				*Create Calibre DRC/LVS/RCX command files
+				*Create Assura LVS/RCX command files
+				*Add 'm' parameter into resistors (CDF)
+				*update inductor Pcell layouts
+
+1.2a_pre3_2	03/09/04	*define 'pinText(..)' layer into deck for users
+				 who use 'pin shape' as the pin layers for LVS 
+				 checking.
+				*revised 'mimcap_rf' typo
+				*revised 'rplpoly_rf' call-back
+
+1.2a_pre4	03/26/04	*Add switch to enable/disbale the P+/N+ guard-ring
+				 /DNW/NW-ring for all RF devices except for inductors
+				*Add 'rm6' into 'LOGIC DEVICES' category
+				*update Assura LVS deck
+				*Add Assura DRC deck into PDK
+
+1.2a		05/08/04	*official release
+				*add feature of display cell name near symbol
+				*add capacitance/resistance/inductance value
+				 display near symbol
+				*change parameter valid range for MOS W
+				*add sanity check for RF device parameters
+				*add 'entry mode' feature for RF resistors/capacitors
+				*fix resistance expression for all resistors
+				*update sheet resistance for base-band resistors
+				*add metallization capability (1P6M,1P5M/1P4M)
+				*rename cell 'mimcap5' to 'mimcap'
+				*symbols update
+				* add special devices for substrate network
+				  simulation (nwcon, pwcon, dnwcon and psubcon)
+				*update Assura/Calibre DRC/LVS/RC decks
+				*update spice model
+				 (support the Monte-Carlo simulation)
+
+1.2b		05/31/04	*update ADS views (official support)
+				*update spice model card to V1.2b
+				*fix some bugs
+				*remove unused utilities: updateCDF.ile...
+				*update 'addWire' utility
+				*change 'leading_length' of 'mimcap' from
+				 2.0u to 2.005u to avoid DRC violation
+
+1.3a		10/15/04            
+                                *add rfpmos with nwell
+                                *add distribute model(rnpol_dis, rnpolrpo_dis, rnpolw_dis, rppol_dis
+				 rppolrpo_dis, rppolw_dis, rppolyhri_dis)
+				*add mismatch model(nch_mis, nch3_mis, nmos_rf_mis, nmos_rf33_mis
+				 pch_mis, pch3_mis, pmos_rf_mis, pmos_rf33_mis, pmos_rf_nw_mis,
+				 pmos_rf33_nw_mis)
+				*add base band varactor
+				*split DNW pin from RW pin for rfnmos 
+				*fix inductor's parameter cause of Assura LVS doesn't match issue
+				*modify base-band mos's poly extension rules
+				*add LC_PAD layout
+				*support bsource model for DC backannotation
+				*fix mimcap's DRC issue with size 15uX15u
+
+1.3b		12/31/04        *change devices's category structure
+				*provide utilities for PDK migration (V1.2b->V1.3b)
+				*update base-band MOS devices and fix 'pcellEvalFailed'
+				 when setting 'routPolydir'.
+				*change maximum values of 'm' & 'fingers' of MOS
+				 devices to '999'
+				*remove DNW & outter guard-ring from 'rfpmos2v_nw' & 
+				 'rfpmos2v_nw_mis'
+				*change parameters valid range of 'rplpoly_rf'
+				 , 'rphpoly_rf' and 'rphripoly_rf'.
+				*update Assura LVS/RCX deck
+				*update Calibre DRC/LVS/RCX deck
+
+1.3cP1		3/24/'05	*loosed 'rphripoly' length upper-bound from 50u to 1000u
+				*loosed 'rnhpoly/rphpoly/rphripoly' resistor width
+                                 lower-bound from 2u to 1u
+				*fixed 'ind_std' inductor called to incorrect model
+                                 when 'w=15u'
+				*added m-factor for all RF devices
+				*changed the 'minL' and 'maxL' of 'rnlpoly/rplpoly'
+				*updated schematic/layout migration utility
+				*updated icc.rules file
+				*set max value for m-factor of BJT devices
+				*removed addWire utility
+				*changed minW of 'rplpoly_rf' to 0.42u to avoid DRC error
+				*update techfile/strmioMap files (add layers
+				 for CIS process)
+
+1.3dP1		6/30/05		*added resistor dummy layer for each metal layer
+				*added parallel and series functions in nonmetal resistors
+				*added five distributed resistors for simulation 
+				 (rnhpoly_dis,rnlpoly_dis,rphpoly_dis,rphripoly_dis,rplpoly_dis)
+   				*added "Poly Contact" option for MOS
+			        *added "auto connection to subtract contacts" function in MOS
+				*fixed the problem that fingers of MOS don't work well
+				*provide utilities for PDK migration (V1.3cP1->V1.3dP1)
+				*update techfile/strmioMap files   
+
+1.3dP2		7/19/05		*added ADS view in each resistor
+
+1.3dP3		9/21/05		*fix the integrated bodytie problem of dogbone MOS
+				*remove the document "Recommend_solution_to_solve_integrated_
+				 bodytie_problem.pdf"
+				*correct the simulation information in spectre view of all baseband
+			         MOS
+			        *fix that symbols in 5m and 4m can't show argument
+		                *fix the incorrect model output of resistors with two models when 
+				 the width equals to some special values. 		
+				*revise the document "RF_devices_guard_ring_drawn_guideline.pdf".
+				 The guard ring of NWELL is N+ guard ring.
+				 
+1.3d           12/31/05         *update Calibre/Assura LVS technology files
+                                *distributed resistors are added into Calibre/Assura LVS technology
+			         files.	
+				*modify calview.cellmap to output correct RC extraction netlist when
+			         m > 1 or segments > 1	
+				*provide migration utility from 12b to 13d and 13c to 13d 
+				*revise pcf file for corner analysis simulation
+				*new document introduce the CDF usage
+				*remove stream directory because techfile provide the same function
+				 as stream in and out map
+				
+				

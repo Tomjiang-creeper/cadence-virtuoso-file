@@ -1,0 +1,5 @@
+DEFINE basic /opt/IC617/tools/dfII/etc/cdslib/basic 
+DEFINE analogLib /opt/IC617/tools/dfII/etc/cdslib/artist/analogLib
+DEFINE tsmc18rf ./tsmc18rf
+DEFINE cdsDefTechLib /opt/IC617/tools/dfII/etc/cdsDefTechLib
+DEFINE tsmc18rf ./tsmc18rf

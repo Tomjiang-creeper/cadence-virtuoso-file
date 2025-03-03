@@ -1,0 +1,62 @@
+********************************************************************************
+Program:	@(#)$CDS: cdb2oa version 6.1.7-64b 11/09/2015 12:39 (sjfbm191) $
+		sub-version  IC6.1.7-64b.78 
+Started at:	May  5 16:31:52 2022
+Hierarchy:	/opt/IC617
+User Name:	work
+Host Name:	work-eda
+Options:	-cdslibpath /home/work/pdk/tsmc18rf/cds.lib -lib tsmc18rf -log 
+          cdb2oa.gui.log -appendlog -mapundefinedpingroups strong 
+Directory:	/home/work/pdk/tsmc18rf_OA
+Log File:	/home/work/pdk/tsmc18rf_OA/cdb2oa.gui.log
+
+	Copyright (C) 2001-2005 Cadence Design Systems, Inc. All rights reserved  worldwide
+********************************************************************************
+
+
+Unable to open library tsmc18rf at path /home/work/pdk/tsmc18rf_OA/tsmc18rf: Invalid Lib Path.
+
+WARNING (CDBOA-511): The prVia VIA23_stack_north cannot be translated because  
+                     the device cellview does not exist.
+
+WARNING (CDBOA-511): The prVia VIA23_stack_south cannot be translated because  
+                     the device cellview does not exist.
+
+WARNING (CDBOA-511): The prVia VIA34_stack_east cannot be translated because   
+                     the device cellview does not exist.
+
+WARNING (CDBOA-511): The prVia VIA34_stack_west cannot be translated because   
+                     the device cellview does not exist.
+
+WARNING (CDBOA-511): The prVia VIA45_stack_north cannot be translated because  
+                     the device cellview does not exist.
+
+WARNING (CDBOA-511): The prVia VIA45_stack_south cannot be translated because  
+                     the device cellview does not exist.
+
+WARNING (CDBOA-511): The prVia VIA56_stack_east cannot be translated because   
+                     the device cellview does not exist.
+
+WARNING (CDBOA-511): The prVia VIA56_stack_west cannot be translated because   
+                     the device cellview does not exist.
+
+
+********************************************************************************
+Finished at:   May  5 16:32:00 2022
+
+114 cells and 676 cellviews were translated from library 'tsmc18rf' in 7.7s.
+
+Message Summary:
+
+WARNING (CDBOA-511): The prVia <name> cannot be translated because the device  
+                     cellview does not exist.
+                     
+                      Generated 8 times. The prRule definition is incomplete and
+                     the prVia device cannot be translated. This, however, does 
+                     not stop the translator. If you want to use the device in  
+                     your design, ensure that the technology library contains   
+                     all information and run the translator again.
+
+********************************************************************************
+
+
