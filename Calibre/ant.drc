@@ -1,0 +1,544 @@
+
+
+
+
+
+//*********************************************************************************
+// * 0.18um Calibre ANTENNA DRC COMMAND FILE - CM18S3_6M.ANT.13a (VER 1.3a, 02/26/2004)
+// * FOR TSMC 0.18UM MIXED SIGNAL/RF 1P6M SALICIDE 1.8V/3.3V PROCESS       
+// * (DESIGN RULE DOCUMENT: T-018-MM-DR-001 Rev1.3)                        
+//*********************************************************************************
+//
+//  DISCLAIMER
+//
+//  The information contained herein is provided by TSMC on an "AS IS" basis
+//  without any warranty, and TSMC has no obligation to support or otherwise
+//  maintain the information.  TSMC disclaims any representation that the
+//  information does not infringe any intellectual property rights or proprietary
+//  rights of any third parties.  There are no other warranties given by TSMC,
+//  whether express, implied or statutory, including, without limitation, implied
+//  warranties of merchantability and fitness for a particular purpose.
+//
+//  STATEMENT OF USE
+//
+//  This information contains confidential and proprietary information of TSMC.
+//  No part of this information may be reproduced, transmitted, transcribed,
+//  stored in a retrieval system, or translated into any human or computer
+//  language, in any form or by any means, electronic, mechanical, magnetic,
+//  optical, chemical, manual, or otherwise, without the prior written permission
+//  of TSMC.  This information was prepared for informational purpose and is for
+//  use by TSMC's customers only.  TSMC reserves the right to make changes in the
+//  information at any time and without notice.
+//
+//-----------------------------------------------------------------------------------
+//***********************************************************************************
+//
+//  NOTICE: (Read Me First!)    
+//     The runset is tested and developed on Calibre ver 9.1_2.1 (Feb, 2002), please use this or
+//     newer version of Calibre to execute this runset.
+
+//---------------------------------------------------------------------------------
+//
+//***********************************************************************************
+
+// ATTENTION NOTICE !!!
+//==================================================
+// For top metal antenna check, the default is set to thick top metal and the thickness of
+// top metal is 2um.
+// If customer uses normal top Metal, please add "//" on the line " #DEFINE THICK "
+
+#DEFINE THICK
+
+
+//
+// ENVIRONMENT SETUP
+//------------------
+PRECISION    1000
+RESOLUTION     5   //Set layout grid  check to 0.005
+
+LAYOUT SYSTEM GDSII
+LAYOUT PATH "GDSFILENAME"
+LAYOUT PRIMARY "TOPCELLNAME"
+
+DRC RESULTS DATABASE "DRC_RES.db"
+DRC SUMMARY REPORT "DRC.rep" 
+DRC CHECK TEXT ALL
+DRC MAXIMUM RESULTS ALL
+
+FLAG OFFGRID YES     // For layout grid check. default grid value is resolution size
+FLAG ACUTE YES
+FLAG SKEW YES
+FLAG NONSIMPLE YES
+
+DRC INCREMENTAL CONNECT YES
+
+// DRAWN LAYER DEFINITIONS
+//========================
+LAYER  ODi       3 11 12
+LAYER  OD2i      4
+LAYER  POLYi     13
+LAYER  COi       15
+LAYER  M1i       16
+LAYER  VIA1i     17
+LAYER  M2i       18
+LAYER  VIA2i     27
+LAYER  M3i       28
+LAYER  VIA3i       29  // Define connect for M4 to M3
+LAYER  M4i         31  // Fourth Metal layer
+LAYER  VIA4i       32  // Define connect for M5 to M4
+LAYER  M5i         33  // Fifth Metal layer
+LAYER  VIA5i       39  // Define connect for MTOP to 5
+LAYER  M6i         38  // Sixth Metal layer  
+LAYER  VIADi       167  // Define connect form top metal to MD
+LAYER  MDi         168  // RDL layer  
+
+
+//In TSMC standard mapping, datatype 1 is for dummy metal and datatype 2 is for metal slot
+// Metal Slot layers
+//
+LAYER MAP 16 DATATYPE 2 321
+LAYER  M1SLOTi    321  // Metal1 slot (if drawn)
+LAYER MAP 18 DATATYPE 2 322
+LAYER  M2SLOTi    322  // Metal2 slot (if drawn)
+LAYER MAP 28 DATATYPE 2 323
+LAYER  M3SLOTi    323  // Metal3 slot (if drawn)
+LAYER MAP 31 DATATYPE 2 324
+LAYER  M4SLOTi    324  // Metal4 slot (if drawn)
+LAYER MAP 33 DATATYPE 2 325
+LAYER  M5SLOTi    325  // Metal5 slot (if drawn)
+LAYER MAP 38 DATATYPE 2 326
+LAYER  M6SLOTi  326    // Metal6 slot (if drawn)
+LAYER MAP 168 DATATYPE 2 328
+LAYER  MDSLOTi  328    // MD slot (if drawn)
+
+//
+// Dummy Metal layers
+//
+LAYER MAP 16 DATATYPE 1 316
+LAYER  M1DMY    316
+LAYER MAP 18 DATATYPE 1 318
+LAYER  M2DMY    318
+LAYER MAP 28 DATATYPE 1 329
+LAYER  M3DMY    329
+LAYER MAP 31 DATATYPE 1 331
+LAYER  M4DMY    331
+LAYER MAP 33 DATATYPE 1 333
+LAYER  M5DMY    333
+LAYER MAP 38 DATATYPE 1 338
+LAYER  M6DMY    338
+LAYER MAP 168 DATATYPE 1 340
+LAYER  MDDMY    340    
+
+//
+// Capacitor Top Metal Layers
+//
+LAYER MAP 67 DATATYPE 2 257
+LAYER CTM2i   257       // Capacitor Top Metal-2
+LAYER MAP 67 DATATYPE 3 258
+LAYER CTM3i   258       // Capacitor Top Metal-3
+LAYER MAP 67 DATATYPE 4 259
+LAYER CTM4i   259       // Capacitor Top Metal-4
+LAYER MAP 67 DATATYPE 5 260
+LAYER CTM5i   260       // Capacitor Top Metal-5
+
+LAYOUT TOP LAYER M1i VIA1i M1SLOTi M1DMY
+LAYOUT TOP LAYER M2i VIA2i M2SLOTi M2DMY
+LAYOUT TOP LAYER M3i VIA3i M3SLOTi M3DMY
+LAYOUT TOP LAYER M4i VIA4i M4SLOTi M4DMY
+LAYOUT TOP LAYER M5i VIA5i M5SLOTi M5DMY
+LAYOUT TOP LAYER MDi VIADi MDSLOTi MDDMY M6i M6SLOTi M6DMY
+
+// metal in silicon
+//M1   = (M1i NOT M1SLOT) OR DUM1
+M1   = (M1i NOT M1SLOTi) OR M1DMY
+//M2   = (M2i NOT M2SLOT) OR DUM2
+M2   = (M2i NOT M2SLOTi) OR M2DMY
+//M3   = (M3i NOT M3SLOT) OR DUM3
+M3   = (M3i NOT M3SLOTi) OR M3DMY
+//M4   = (M4i NOT M4SLOT) OR DUM4
+M4   = (M4i NOT M4SLOTi) OR M4DMY
+//M5   = (M5i NOT M5SLOT) OR DUM5
+M5   = (M5i NOT M5SLOTi) OR M5DMY
+//M6   = (M6i NOT M6SLOT) OR DUM6
+M6   = (M6i NOT M6SLOTi) OR M6DMY
+MD   = (MDi NOT MDSLOTi) OR MDDMY
+
+//Exclude the via upon CTM region
+VIAt   = VIA5i NOT INTERACT CTM5i
+VIAc   = VIA5i AND CTM5i
+GATE     = ODi  AND POLYi
+SD       = ODi  NOT POLYi
+
+//POLY CHECKS
+//===========
+
+CONNECT POLYi GATE
+
+
+ // POLY thickness is 2000A
+
+A.R.1.POLY { @ (Poly perim*thickness / gate area) > 200 
+  NET AREA RATIO POLYi GATE > 200
+      [
+        PERIMETER(POLYi) * 0.2 / AREA(GATE)
+      ] RDB A.R.1.POLYi.rep POLYi GATE
+}
+
+//CO CHECKS
+//=========
+
+CONNECT COi POLYi
+
+A.R.4.CO { @ (contact area / gate area) > 10 
+  CO_POLYi = COi AND POLYi
+  NET AREA RATIO POLYi CO_POLYi GATE > 10   // error highlight on POLY
+      [
+        AREA(CO_POLYi) / AREA(GATE) + AREA(POLYi)/AREA(POLYi) -1
+      ] RDB A.R.4.CO.rep CO_POLYi GATE  
+}
+
+//M1 CHECKS
+//=========
+
+CONNECT M1 POLYi SD BY COi
+
+ // M1 thickness is 5300 A
+
+M1_DIO = NET AREA RATIO SD M1 > 0
+M1_MIN_DIO = NET AREA M1_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.2_A.R.3.M1 { @ (M1 perim*thickness / gate area) > 400 (without effective diode) 
+		 @ (M1 perim*thickness / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M1 M1_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M1) * !!AREA(GATE) *
+       (
+       !AREA(M1_MIN_DIO)*
+       		( PERIMETER(M1)*0.53/AREA(GATE) - 400 ) +
+       !!AREA(M1_MIN_DIO)*
+       		( PERIMETER(M1)*0.53/AREA(GATE) - AREA(M1_MIN_DIO)*400 - 2200 )
+	)
+      ] RDB A.R.2.M1.rep M1 M1_MIN_DIO GATE
+}
+
+
+//VIA1 CHECKS
+//===========
+
+CONNECT VIA1i M1
+
+VIA1_DIO = NET AREA RATIO SD VIA1i > 0
+VIA1_MIN_DIO = NET AREA VIA1_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.5_A.R.6.VIA1 { @ (VIA1 area / gate area) > 20 (without effective diode) 
+	 	   @ (VIA1 area / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M1 VIA1i VIA1_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M1) * !!AREA(GATE) * 
+       (
+       !AREA(VIA1_MIN_DIO)*
+       		( AREA(VIA1i)/AREA(GATE) - 20 ) +       
+       !!AREA(VIA1_MIN_DIO)*
+       		( AREA(VIA1i)/AREA(GATE) - AREA(VIA1_MIN_DIO)*83.33 - 75 )
+	)	
+
+      ] RDB A.R.5_A.R.6.VIA1.rep VIA1i VIA1_MIN_DIO GATE
+}
+
+
+
+//M2 CHECKS
+//=========
+
+CONNECT M2 M1 BY VIA1i
+
+ // M2 thickness is 5300 A
+
+M2_DIO = NET AREA RATIO SD M2 > 0
+M2_MIN_DIO = NET AREA M2_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.2_A.R.3.M2 { @ (M2 perim*thickness / gate area) > 400 (without effective diode) 
+		 @ (M2 perim*thickness / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M2 M2_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M2) * !!AREA(GATE) *
+       (
+       !AREA(M2_MIN_DIO)*
+       		( PERIMETER(M2)*0.53/AREA(GATE) - 400 ) +
+       !!AREA(M2_MIN_DIO)*
+       		( PERIMETER(M2)*0.53/AREA(GATE) - AREA(M2_MIN_DIO)*400 - 2200 )
+	)
+      ] RDB A.R.2.M2.rep M2 M2_MIN_DIO GATE
+}
+
+
+//VIA2 CHECKS
+//===========
+
+CONNECT VIA2i M2
+
+VIA2_DIO = NET AREA RATIO SD VIA2i > 0
+VIA2_MIN_DIO = NET AREA VIA2_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.5_A.R.6.VIA2i { @ (VIA2i area / gate area) > 20 (without effective diode) 
+	 	      @ (VIA2i area / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M2 VIA2i VIA2_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M2) * !!AREA(GATE) * 
+       (
+       !AREA(VIA2_MIN_DIO)*
+       		( AREA(VIA2i)/AREA(GATE) - 20 ) +       
+       !!AREA(VIA2_MIN_DIO)*
+       		( AREA(VIA2i)/AREA(GATE) - AREA(VIA2_MIN_DIO)*83.33 - 75 )
+	)	
+
+      ] RDB A.R.5_A.R.6.VIA2.rep VIA2i VIA2_MIN_DIO GATE
+}
+
+
+
+//M3 CHECKS
+//=========
+
+CONNECT M3 M2 BY VIA2i
+
+ // M3 thickness is 5300 A
+
+M3_DIO = NET AREA RATIO SD M3 > 0
+M3_MIN_DIO = NET AREA M3_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.2_A.R.3.M3 { @ (M3 perim*thickness / gate area) > 400 (without effective diode) 
+		 @ (M3 perim*thickness / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M3 M3_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M3) * !!AREA(GATE) *
+       (
+       !AREA(M3_MIN_DIO)*
+       		( PERIMETER(M3)*0.53/AREA(GATE) - 400 ) +
+       !!AREA(M3_MIN_DIO)*
+       		( PERIMETER(M3)*0.53/AREA(GATE) - AREA(M3_MIN_DIO)*400 - 2200 )
+	)
+      ] RDB A.R.2.M3.rep M3 M3_MIN_DIO GATE
+}
+
+
+//VIA3 CHECKS
+//===========
+
+CONNECT VIA3i M3
+
+VIA3_DIO = NET AREA RATIO SD VIA3i > 0
+VIA3_MIN_DIO = NET AREA VIA3_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.5_A.R.6.VIA3i { @ (VIA3i area / gate area) > 20 (without effective diode) 
+	 	      @ (VIA3i area / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M3 VIA3i VIA3_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M3) * !!AREA(GATE) * 
+       (
+       !AREA(VIA3_MIN_DIO)*
+       		( AREA(VIA3i)/AREA(GATE) - 20 ) +       
+       !!AREA(VIA3_MIN_DIO)*
+       		( AREA(VIA3i)/AREA(GATE) - AREA(VIA3_MIN_DIO)*83.33 - 75 )
+	)	
+
+      ] RDB A.R.5_A.R.6.VIA3.rep VIA3i VIA3_MIN_DIO GATE
+}
+
+
+
+//M4 CHECKS
+//=========
+
+CONNECT M4 M3 BY VIA3i
+
+ // M4 thickness is 5300 A
+
+M4_DIO = NET AREA RATIO SD M4 > 0
+M4_MIN_DIO = NET AREA M4_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.2_A.R.3.M4 { @ (M4 perim*thickness / gate area) > 400 (without effective diode) 
+		 @ (M4 perim*thickness / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M4 M4_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M4) * !!AREA(GATE) *
+       (
+       !AREA(M4_MIN_DIO)*
+       		( PERIMETER(M4)*0.53/AREA(GATE) - 400 ) +
+       !!AREA(M4_MIN_DIO)*
+       		( PERIMETER(M4)*0.53/AREA(GATE) - AREA(M4_MIN_DIO)*400 - 2200 )
+	)
+      ] RDB A.R.2.M4.rep M4 M4_MIN_DIO GATE
+}
+
+
+//VIA4 CHECKS
+//===========
+
+CONNECT VIA4i M4
+
+VIA4_DIO = NET AREA RATIO SD VIA4i > 0
+VIA4_MIN_DIO = NET AREA VIA4_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.5_A.R.6.VIA4i { @ (VIA4i area / gate area) > 20 (without effective diode) 
+	 	      @ (VIA4i area / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M4 VIA4i VIA4_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M4) * !!AREA(GATE) * 
+       (
+       !AREA(VIA4_MIN_DIO)*
+       		( AREA(VIA4i)/AREA(GATE) - 20 ) +       
+       !!AREA(VIA4_MIN_DIO)*
+       		( AREA(VIA4i)/AREA(GATE) - AREA(VIA4_MIN_DIO)*83.33 - 75 )
+	)	
+
+      ] RDB A.R.5_A.R.6.VIA4.rep VIA4i VIA4_MIN_DIO GATE
+}
+
+
+
+//M5 CHECKS
+//=========
+
+CONNECT M5 M4 BY VIA4i
+
+ // M5 thickness is 5300 A
+
+M5_DIO = NET AREA RATIO SD M5 > 0
+M5_MIN_DIO = NET AREA M5_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.2_A.R.3.M5 { @ (M5 perim*thickness / gate area) > 400 (without effective diode) 
+		 @ (M5 perim*thickness / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M5 M5_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M5) * !!AREA(GATE) *
+       (
+       !AREA(M5_MIN_DIO)*
+       		( PERIMETER(M5)*0.53/AREA(GATE) - 400 ) +
+       !!AREA(M5_MIN_DIO)*
+       		( PERIMETER(M5)*0.53/AREA(GATE) - AREA(M5_MIN_DIO)*400 - 2200 )
+	)
+      ] RDB A.R.2.M5.rep M5 M5_MIN_DIO GATE
+}
+
+
+//VIA5 CHECKS
+//===========
+
+CONNECT VIAt M5
+
+VIA5_DIO = NET AREA RATIO SD VIAt > 0
+VIA5_MIN_DIO = NET AREA VIA5_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.5_A.R.6.VIAt { @ (VIAt area / gate area) > 20 (without effective diode) 
+	 	      @ (VIAt area / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M5 VIAt VIA5_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M5) * !!AREA(GATE) * 
+       (
+       !AREA(VIA5_MIN_DIO)*
+       		( AREA(VIAt)/AREA(GATE) - 20 ) +       
+       !!AREA(VIA5_MIN_DIO)*
+       		( AREA(VIAt)/AREA(GATE) - AREA(VIA5_MIN_DIO)*83.33 - 75 )
+	)	
+
+      ] RDB A.R.5_A.R.6.VIA5.rep VIAt VIA5_MIN_DIO GATE
+}
+
+
+
+//M6 CHECKS
+//=========
+
+CONNECT M6 M5 BY VIAt
+CONNECT M6 CTM5i BY VIAc
+
+
+M6_DIO = NET AREA RATIO SD M6 > 0
+M6_MIN_DIO = NET AREA M6_DIO > 0.203  // minimum effective diode 0.203
+
+#IFDEF THICK
+// M6 thickness is 20K A
+
+A.R.2_A.R.3.M6.THICK { @ (M6 perim*thickness / gate area) > 400 (without effective diode) 
+		       @ (M6 perim*thickness / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M6 M6_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M6) * !!AREA(GATE) *
+       (
+       !AREA(M6_MIN_DIO)*
+       		( PERIMETER(M6)*2/AREA(GATE) - 400 ) +
+       !!AREA(M6_MIN_DIO)*
+       		( PERIMETER(M6)*2/AREA(GATE) - AREA(M6_MIN_DIO)*8000 - 30000 )
+	)
+      ] RDB A.R.2.M6.THICK.rep M6 M6_MIN_DIO GATE
+}
+
+#ELSE
+// M6 thickness is 9900 A
+
+A.R.2_A.R.3.M6 { @ (M6 perim*thickness / gate area) > 400 (without effective diode) 
+		 @ (M6 perim*thickness / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M6 M6_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M6) * !!AREA(GATE) *
+       (
+       !AREA(M6_MIN_DIO)*
+       		( PERIMETER(M6)*0.99/AREA(GATE) - 400 ) +
+       !!AREA(M6_MIN_DIO)*
+       		( PERIMETER(M6)*0.99/AREA(GATE) - AREA(M6_MIN_DIO)*8000 - 30000 )
+	)
+      ] RDB A.R.2.M6.rep M6 M6_MIN_DIO GATE
+}
+
+#ENDIF
+
+
+//VIAD CHECKS
+//===========
+
+CONNECT VIADi M6
+
+VIAD_DIO = NET AREA RATIO SD VIADi > 0
+VIAD_MIN_DIO = NET AREA VIAD_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.5_A.R.6.VIAD { @ (VIAD area / gate area) > 20 (without effective diode) 
+	 	   @ (VIAD area / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO M6 VIADi VIAD_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(M6) * !!AREA(GATE) * 
+       (
+       !AREA(VIAD_MIN_DIO)*
+       		( AREA(VIADi)/AREA(GATE) - 20 ) +       
+       !!AREA(VIAD_MIN_DIO)*
+       		( AREA(VIADi)/AREA(GATE) - AREA(VIAD_MIN_DIO)*83.33 - 75 )
+	)	
+
+      ] RDB A.R.5_A.R.6.VIAD.rep VIADi VIAD_MIN_DIO GATE
+}
+
+//MD CHECKS
+//=========
+
+CONNECT MD M6 BY VIADi
+
+// MD thickness is 9900 A
+
+MD_DIO = NET AREA RATIO SD MD > 0
+MD_MIN_DIO = NET AREA MD_DIO > 0.203  // minimum effective diode 0.203
+
+A.R.2_A.R.3.MD { @ (MD perim*thickness / gate area) > 400 (without effective diode) 
+		 @ (MD perim*thickness / gate area) > Ratio (with effective diode) 
+  NET AREA RATIO MD MD_MIN_DIO GATE > 0     // no effective diode
+      [
+       !!AREA(MD) * !!AREA(GATE) *
+       (
+       !AREA(MD_MIN_DIO)*
+       		( PERIMETER(MD)*0.99/AREA(GATE) - 400 ) +
+       !!AREA(MD_MIN_DIO)*
+       		( PERIMETER(MD)*0.99/AREA(GATE) - AREA(MD_MIN_DIO)*8000 - 30000 )
+	)
+      ] RDB A.R.2.MD.rep MD MD_MIN_DIO GATE
+}
+
+

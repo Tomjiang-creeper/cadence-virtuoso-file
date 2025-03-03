@@ -1,0 +1,914 @@
+(nch
+  (tsmc18rf nmos2v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(nch3
+  (tsmc18rf nmos3v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(mench
+  (tsmc18rf nmosmvt2v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(mench3
+  (tsmc18rf nmosmvt3v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(nanch
+  (tsmc18rf nmosnvt2v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(nanch3
+  (tsmc18rf nmosnvt3v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(pch
+  (tsmc18rf pmos2v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(pch3
+  (tsmc18rf pmos3v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(mepch
+  (tsmc18rf pmosmvt2v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil simM 1)
+  )
+)
+(dnwpsub
+  (tsmc18rf dio_dnwpsub symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)  
+(pwdnw
+  (tsmc18rf dio_pwdnw symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)  
+(ndio
+  (tsmc18rf dioden symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)
+(ndio_3
+  (tsmc18rf dioden3v symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)
+(nwdio
+  (tsmc18rf diodenw symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)
+(nwdio_3
+  (tsmc18rf diodenw3v symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pdio
+  (tsmc18rf diodep symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pdio_3
+  (tsmc18rf diodep3v symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)
+(endio_3
+  (tsmc18rf diodesd3v symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+  )
+)
+(npn2
+  (tsmc18rf npn symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )   
+  (
+      (nil m 1)
+  )
+)
+(npn5
+  (tsmc18rf npn symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )   
+  (
+      (nil m 1)
+  )
+)
+(npn10
+  (tsmc18rf npn symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )   
+  (
+      (nil m 1)
+  )
+)
+(pnp2
+  (tsmc18rf vpnp symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pnp5
+  (tsmc18rf vpnp symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pnp10
+  (tsmc18rf vpnp symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pnp2_3
+  (tsmc18rf vpnp3 symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pnp5_3
+  (tsmc18rf vpnp3 symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pnp10_3
+  (tsmc18rf vpnp3 symbol)
+  (
+      (c C)
+      (b B)
+      (e E)
+  )
+  (
+      (nil m 1)
+  )
+)
+(rm1
+  (tsmc18rf rm1 symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+(rm2
+  (tsmc18rf rm2 symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+(rm3
+  (tsmc18rf rm3 symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+(rm4
+  (tsmc18rf rm4 symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+(rm5
+  (tsmc18rf rm5 symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+(rmt
+  (tsmc18rf rmt symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+(rnwsti
+  (tsmc18rf rnwell symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rnwod_m
+  (tsmc18rf rnwod symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (b B)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rnpo1rpo
+  (tsmc18rf rnhpoly symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rppo1rpo
+  (tsmc18rf rphpoly symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rnodrpo_m
+  (tsmc18rf rnplus symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (b B)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rpodrpo_m
+  (tsmc18rf rpplus symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (b B)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rnpo1w
+  (tsmc18rf rnlpoly symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rnpo1
+  (tsmc18rf rnlpoly symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rppo1w
+  (tsmc18rf rplpoly symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rppo1
+  (tsmc18rf rplpoly symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rnodw_m
+  (tsmc18rf rnlplus symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (b B)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rnod_m
+  (tsmc18rf rnlplus symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (b B)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rpodw_m
+  (tsmc18rf rplplus symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (b B)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rpod_m
+  (tsmc18rf rplplus symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (b B)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(rppolyhri
+  (tsmc18rf rphripoly symbol)
+  (
+      (pos PLUS)
+      (neg MINUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+(mimcap
+  (tsmc18rf mimcap symbol)
+  (
+      (pos TOP)
+      (neg BOT)
+  )
+  (
+      (nil m 1)
+  )
+)
+(nmos_rf
+  (tsmc18rf rfnmos2v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil m 1)
+  )
+)  
+(nmos_rf33
+  (tsmc18rf rfnmos3v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pmos_rf
+  (tsmc18rf rfpmos2v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pmos_rf33
+  (tsmc18rf rfpmos3v symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pmos_rf33_nw
+  (tsmc18rf rfpmos3v_nw symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil m 1)
+  )
+)
+(pmos_rf_nw
+  (tsmc18rf rfpmos2v_nw symbol)
+  (
+      (d D)
+      (g G)
+      (s S)
+      (b B)
+  )
+  (
+      (nil m 1)
+  )
+)
+(spiral_s2_std
+  (tsmc18rf ind_std symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(spiral_s3_std
+  (tsmc18rf ind_std symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(spiral_s2_sym
+  (tsmc18rf ind_sym symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(spiral_s3_sym
+  (tsmc18rf ind_sym symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)  
+(spiral_s2_sym_ct
+  (tsmc18rf ind_sym_ct symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+      (ctap CTAP)
+  )
+  (
+      (nil m 1)
+  )
+)
+(spiral_s3_sym_ct
+  (tsmc18rf ind_sym_ct symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+      (ctap CTAP)
+  )
+  (
+      (nil m 1)
+  )
+)
+(xjvar_w40
+  (tsmc18rf jvar symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(xjvar_nr36
+  (tsmc18rf jvar symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(moscap_rf
+  (tsmc18rf mos_var symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(moscap_rf33
+  (tsmc18rf mos_var33 symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(mimcap_wos
+  (tsmc18rf mimcap_rf symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(mimcap_shield
+  (tsmc18rf mimcap_rf symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+  )
+)
+(rppoly_rf
+  (tsmc18rf rplpoly_rf symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+(rppolywo_rf
+  (tsmc18rf rphpoly_rf symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+(rppolyhri_rf
+  (tsmc18rf rphripoly_rf symbol)
+  (
+      (plus PLUS)
+      (minus MINUS)
+      (bulk BULK)
+  )
+  (
+      (nil m 1)
+      (nil mf 1)
+  )
+)
+
+(nmoscap
+     (tsmc18rf mos_var_b symbol)
+     (
+           (plus PLUS)
+           (minus MINUS)
+     )
+  (
+      (nil m 1)
+  )
+)
+(nmoscap_33
+     (tsmc18rf mos_var_b3 symbol)
+     (
+           (plus PLUS)
+           (minus MINUS)
+     )
+  (
+      (nil m 1)
+  )
+)
+
+( (p cap c)
+     (tsmc18rf pcapacitor symbol)
+     (
+           (PLUS)
+           (MINUS)
+     )
+)
+( (p res r)
+     (tsmc18rf presistor symbol)
+        (
+           (PLUS)
+           (MINUS)
+        )
+)
+
+(rnpo1rpo_dis
+  (tsmc18rf rnhpoly_dis symbol)
+  (
+    (bulk B)
+    (minus MINUS)
+    (plus PLUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+
+(rppo1rpo_dis
+  (tsmc18rf rphpoly_dis symbol)
+  (
+    (bulk B)
+    (minus MINUS)
+    (plus PLUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+
+(rnpo1w_dis
+  (tsmc18rf rnlpoly_dis symbol)
+  (
+    (bulk B)
+    (minus MINUS)
+    (plus PLUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+
+(rppo1w_dis
+  (tsmc18rf rplpoly_dis symbol)
+  (
+    (bulk B)
+    (minus MINUS)
+    (plus PLUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+
+(rnpo1_dis
+  (tsmc18rf rnlpoly_dis symbol)
+  (
+    (bulk B)
+    (minus MINUS)
+    (plus PLUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+
+(rppo1_dis
+  (tsmc18rf rplpoly_dis symbol)
+  (
+    (bulk B)
+    (minus MINUS)
+    (plus PLUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
+
+(rppolyhri_dis
+  (tsmc18rf rphripoly_dis symbol)
+  (
+    (bulk B)
+    (minus MINUS)
+    (plus PLUS)
+  )
+  (
+      (nil m 1)
+      (nil segments 1)
+  )
+)
